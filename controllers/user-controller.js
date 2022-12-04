@@ -14,7 +14,7 @@ const addAnimalController = async (req, res) => {
   };
   const result = await userService.addAnimal(animal, owner);
 
-  if (result.length) {
+  if (!result) {
     throw new ApiErrorsTemplate(400, "Failed to create animal");
   }
 
